@@ -1,24 +1,22 @@
-#Open a file in write mode and write data 
-file = open("sample.txt", "w") 
-file.write("Hello, this is the first line in the file.\n") 
-file.write("File handling in Python is easy to learn.\n") 
-file.close()     
-# Closing the file 
-print("Data written successfully.\n") 
-# Open the file in read mode and display contents 
-file = open("sample.txt", "r") 
-print("Reading file contents:") 
-content = file.read() 
-print(content) 
-file.close()      
-# Step 3: Open the file in append mode and add 
-more data 
-file = open("sample.txt", "a") 
-file.write("This line is added using append mode.\n") 
-file.close() 
-print("\nData appended successfully.\n") 
-# Read the file again to see updated content 
-file = open("sample.txt", "r") 
-print("Updated file contents:") 
-print(file.read()) 
-file.close()
+# Step 1: Write data to file
+with open("sample.txt", "w") as file:
+    file.write("Hello, this is the first line in the file.\n")
+    file.write("File handling in Python is easy to learn.\n")
+
+print("Data written successfully.\n")
+
+# Step 2: Read file
+with open("sample.txt", "r") as file:
+    print("Reading file contents:")
+    print(file.read())
+
+# Step 3: Append more data
+with open("sample.txt", "a") as file:
+    file.write("This line is added using append mode.\n")
+
+print("\nData appended successfully.\n")
+
+# Step 4: Read updated content
+with open("sample.txt", "r") as file:
+    print("Updated file contents:")
+    print(file.read())
